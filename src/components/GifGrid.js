@@ -2,6 +2,7 @@ import React from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 // import { getGif } from "../helpers/getGifs";
 import GifGridItemApp from "./GifGridItem";
+import PropTypes from "prop-types";
 // { useState, useEffect }
 const GifGridApp = ({ category }) => {
   //   para llamar la fguncion getGif usamos el hook useEffect ya que de otra manera vuelve a llamar la peticion http cada vez que hago click en el boton.
@@ -30,5 +31,7 @@ const GifGridApp = ({ category }) => {
     </>
   );
 };
-
+GifGridApp.propTypes = {
+  category: PropTypes.string.isRequired,
+};
 export default GifGridApp;

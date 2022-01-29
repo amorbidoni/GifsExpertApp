@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import AddCategoryApp from "./components/AddCategory";
 import GifGridApp from "./components/GifGrid";
 
-const GifExpertApp = () => {
+const GifExpertApp = ({ defaultCategories = [] }) => {
   // no lo hacemos de la siguiente manera a menos que el arr nunca vaya a cambiar, es decir que no vaya a agregar ni sacar categorias y necesite que react lo vuelva a renderizar.
   //   const categories = ["One Ponch", "Samuray X", "Dragon Ball"];
   //
   // en caso de necesitar que se vuelva  a renderizar lo hacemos con el hook useState
   //
-  let initialValue = ["One Ponch"];
-  const [categories, setCategories] = useState(initialValue);
+
+  const [categories, setCategories] = useState(defaultCategories);
 
   // no debemos mutar categories con .push. debemos usar el setCategories
   //   const handleApp = () => {
