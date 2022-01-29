@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+
 const AddCategoryApp = ({ setCategories }) => {
   // el usestate lo dejamos conun string vacio para evitar el error de enviarle al input un value null
   const [inputValue, setInputValue] = useState("");
@@ -8,6 +9,8 @@ const AddCategoryApp = ({ setCategories }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("se disparo el ghandle submit", inputValue);
+
     if (inputValue.trim().length > 2) {
       setCategories((cats) => [inputValue, ...cats]);
       setInputValue("");
